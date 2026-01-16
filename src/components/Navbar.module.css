@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 9999;
     padding: 1.25rem 0;
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
@@ -11,8 +11,8 @@
 
 .glass {
     background: rgba(5, 5, 5, 0.6);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -30,7 +30,7 @@
     color: #fff;
     text-transform: uppercase;
     position: relative;
-    z-index: 1001;
+    z-index: 10001;
 }
 
 .logo span {
@@ -43,14 +43,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
-    gap: 5px;
+    z-index: 10001;
+    gap: 6px;
 }
 
 .hamburger span {
@@ -63,7 +63,7 @@
 }
 
 .hamburgerOpen span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburgerOpen span:nth-child(2) {
@@ -71,7 +71,7 @@
 }
 
 .hamburgerOpen span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .navLinks {
@@ -135,6 +135,10 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -145,17 +149,20 @@
         left: 0;
         right: 0;
         bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
-        background: rgba(5, 5, 5, 0.98);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
+        gap: 2.5rem;
+        background: #050505;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 10000;
+        padding: 0;
+        margin: 0;
     }
 
     .navLinksOpen {
@@ -164,11 +171,13 @@
     }
 
     .navItem {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         letter-spacing: 0.15em;
+        color: #fff;
     }
 
     .navItem::after {
         bottom: -8px;
+        height: 2px;
     }
 }
