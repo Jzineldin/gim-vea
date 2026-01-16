@@ -181,3 +181,87 @@
     padding: 0 var(--space-8) var(--space-8);
     align-self: flex-start;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 80px;
+        padding-bottom: var(--space-16);
+    }
+
+    .header {
+        margin-bottom: var(--space-8);
+        padding: 0 var(--space-4);
+    }
+
+    .title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .bentoGrid {
+        gap: var(--space-4);
+        padding: 0 var(--space-4);
+    }
+
+    .cardPrimary,
+    .cardSecondary {
+        grid-column: span 12;
+    }
+
+    .cardBody {
+        padding: var(--space-6);
+    }
+
+    .cardIcon {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-3);
+    }
+
+    .cardTitle {
+        font-size: 1.4rem;
+    }
+
+    .cardDesc {
+        font-size: 0.9rem;
+    }
+
+    .cardList {
+        margin-top: var(--space-4);
+    }
+
+    .cardList li {
+        font-size: 0.9rem;
+    }
+
+    .cardResult {
+        margin-top: var(--space-4);
+        padding-top: var(--space-3);
+        font-size: 0.85rem;
+    }
+
+    .cardAction {
+        padding: 0 var(--space-6) var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding-top: 70px;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .cardBody {
+        padding: var(--space-4);
+    }
+
+    .cardTitle {
+        font-size: 1.25rem;
+    }
+}

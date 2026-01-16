@@ -584,3 +584,124 @@
     font-size: 1rem;
   }
 }
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .heroTitle span {
+    font-size: 0.35em;
+    letter-spacing: 0.15em;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .heroSubtag {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .taglineHeading {
+    font-size: 1.75rem;
+  }
+
+  .taglineText {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .quoteText {
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+  }
+
+  .visionQuote {
+    padding: var(--space-6) 0;
+  }
+
+  .valueCard {
+    padding: var(--space-4);
+  }
+
+  .valueTitle {
+    font-size: 1.1rem;
+  }
+
+  .valueText {
+    font-size: 0.9rem;
+  }
+
+  .cardContent {
+    padding: var(--space-4);
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardText {
+    font-size: 0.9rem;
+  }
+
+  .visualStrip {
+    height: 250px;
+    margin: var(--space-8) 0;
+  }
+
+  .showcaseImage {
+    min-width: 250px;
+    height: 300px;
+  }
+
+  .testimonialsHeading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .taglineHeading {
+    font-size: 1.5rem;
+  }
+
+  .quoteText {
+    font-size: 1.2rem;
+  }
+
+  .testimonialsHeading {
+    font-size: 2rem;
+  }
+
+  .testimonialCarousel {
+    min-height: 700px;
+  }
+
+  .testimonialImageWrapper {
+    height: 280px;
+  }
+}

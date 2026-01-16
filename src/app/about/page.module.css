@@ -124,3 +124,95 @@
     max-width: 600px;
     margin: 0 auto var(--space-8);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 80px;
+        padding-bottom: var(--space-12);
+    }
+
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .hero {
+        margin-bottom: var(--space-8);
+    }
+
+    .imageWrapper {
+        width: 150px;
+        height: 150px;
+        margin-bottom: var(--space-4);
+    }
+
+    .title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .section {
+        margin-bottom: var(--space-6);
+        padding: var(--space-4);
+    }
+
+    .sectionTitle {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-3);
+    }
+
+    .text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: var(--space-3);
+    }
+
+    .quote {
+        font-size: 1.05rem;
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .list li {
+        font-size: 0.95rem;
+        margin-bottom: var(--space-2);
+    }
+
+    .cta {
+        padding: var(--space-8) var(--space-4);
+        margin-top: var(--space-8);
+    }
+
+    .cta .text {
+        margin-bottom: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding-top: 70px;
+    }
+
+    .imageWrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.15rem;
+    }
+
+    .text {
+        font-size: 0.9rem;
+    }
+
+    .quote {
+        font-size: 1rem;
+    }
+}

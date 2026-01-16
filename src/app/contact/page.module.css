@@ -108,3 +108,79 @@
 .socialLink:hover {
     color: var(--color-primary-gold);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 100px;
+        padding-bottom: var(--space-16);
+        justify-content: flex-start;
+    }
+
+    .container {
+        padding: var(--space-8) var(--space-4);
+        margin: 0 var(--space-4);
+        max-width: none;
+        width: calc(100% - 2rem);
+    }
+
+    .header {
+        margin-bottom: var(--space-8);
+    }
+
+    .title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .form {
+        gap: var(--space-6);
+    }
+
+    .input,
+    .textarea {
+        font-size: 1rem;
+        padding: var(--space-3) 0;
+    }
+
+    .textarea {
+        min-height: 120px;
+    }
+
+    .socials {
+        margin-top: var(--space-12);
+        flex-wrap: wrap;
+        gap: var(--space-4);
+    }
+
+    .socialLink {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding-top: 80px;
+    }
+
+    .container {
+        padding: var(--space-6) var(--space-4);
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .socials {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+    }
+}

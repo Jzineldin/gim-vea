@@ -393,3 +393,28 @@ select {
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
+
+/* Global Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .display-text {
+    font-size: clamp(2.5rem, 10vw, var(--text-display));
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.8rem;
+  }
+}
