@@ -1,0 +1,99 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.25rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+/* Glass effect activated via utility or state if needed, 
+   but we'll apply it directly to the nav for now */
+.glass {
+    background: rgba(5, 5, 5, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.logo span {
+    color: var(--color-primary-gold);
+}
+
+.navLinks {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    align-items: center;
+}
+
+.navItem {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navItem::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 50%;
+    background-color: var(--color-primary-gold);
+    transition: all 0.3s var(--ease-smooth);
+    transform: translateX(-50%);
+}
+
+.navItem:hover {
+    color: #fff;
+}
+
+.navItem:hover::after {
+    width: 100%;
+}
+
+.navItem:focus-visible {
+    color: #fff;
+    outline: 2px solid var(--color-primary-gold);
+    outline-offset: 4px;
+}
+
+.navItem:focus-visible::after {
+    width: 100%;
+}
+
+.logo:focus-visible {
+    outline: 2px solid var(--color-primary-gold);
+    outline-offset: 4px;
+}
+
+.ctaButton {
+    margin-left: 1rem;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+}
