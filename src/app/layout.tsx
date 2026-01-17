@@ -65,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="sv" className={`${inter.variable} ${playfair.variable}`}>
       <body className={inter.className}>
+        <div className="mobile-bg" aria-hidden="true" />
         <Navbar />
         <main style={{ minHeight: '80vh' }}>
           {children}

@@ -198,9 +198,16 @@ body::after {
   body {
     background-image: none;
   }
+}
 
-  body::before {
-    content: "";
+/* Fixed background layer for mobile - works around iOS fixed attachment bug */
+.mobile-bg {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bg {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
