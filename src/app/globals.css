@@ -185,9 +185,18 @@ body {
 /* Mobile background adjustments - iOS compatible */
 @media (max-width: 768px) {
   body {
-    background-size: auto 100vh;
-    background-position: 60% top;
-    background-attachment: scroll;
+    background-size: cover;
+    background-position: 60% center;
+    background-attachment: fixed;
+  }
+
+  /* iOS Safari fallback - fixed attachment doesn't work well */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      background-attachment: scroll;
+      background-size: 100vw auto;
+      background-repeat: repeat-y;
+    }
   }
 }
 
