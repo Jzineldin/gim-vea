@@ -200,6 +200,12 @@ body::after {
   }
 }
 
+/* Site content wrapper - ensures content sits above mobile background */
+.site-content {
+  position: relative;
+  z-index: 1;
+}
+
 /* Fixed background layer for mobile - works around iOS fixed attachment bug */
 .mobile-bg {
   display: none;
@@ -211,14 +217,24 @@ body::after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-image: url('/images/hero_background.jpg');
     background-size: auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    z-index: -2;
+    z-index: 0;
     pointer-events: none;
+  }
+
+  .mobile-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.8);
   }
 }
 
