@@ -170,10 +170,10 @@ select {
 body {
   background-color: var(--color-base-black);
   background-image: url('/images/hero_background.jpg');
-  background-size: cover;
-  background-position: center;
+  background-size: 100% auto;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   color: var(--color-text-primary);
   line-height: 1.5;
   overflow-x: hidden;
@@ -185,7 +185,9 @@ body {
 /* Mobile background adjustments - iOS compatible */
 @media (max-width: 768px) {
   body {
-    background-position: 70% center;
+    background-size: auto 100vh;
+    background-position: 60% top;
+    background-attachment: scroll;
   }
 }
 
