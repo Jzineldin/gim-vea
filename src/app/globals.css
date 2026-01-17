@@ -170,33 +170,34 @@ select {
 body {
   background-color: var(--color-base-black);
   background-image: url('/images/hero_background.jpg');
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   color: var(--color-text-primary);
   line-height: 1.5;
   overflow-x: hidden;
   max-width: 100vw;
   position: relative;
-  min-height: 100vh;
+}
+
+/* Dark overlay for readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.8);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Mobile background adjustments - iOS compatible */
 @media (max-width: 768px) {
   body {
-    background-size: cover;
     background-position: 60% center;
-    background-attachment: fixed;
-  }
-
-  /* iOS Safari fallback - fixed attachment doesn't work well */
-  @supports (-webkit-touch-callout: none) {
-    body {
-      background-attachment: scroll;
-      background-size: 100vw auto;
-      background-repeat: repeat-y;
-    }
+    background-attachment: scroll;
   }
 }
 
