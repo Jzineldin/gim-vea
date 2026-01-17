@@ -65,11 +65,12 @@
 /* Individual card backgrounds */
 .cardKlarhet .cardBg {
     background-image: url('/images/klarhet-struktur.jpg');
-    background-position: center top;
+    background-position: center 20%;
 }
 
 .cardFlow .cardBg {
     background-image: url('/images/flow-arbetsrytmer.jpg');
+    background-position: 110% center;
 }
 
 .cardPartnerskap .cardBg {

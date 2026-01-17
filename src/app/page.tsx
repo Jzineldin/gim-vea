@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -20,6 +21,13 @@ export default function Home() {
             Grace in Motion
           </h1>
           <p className={styles.heroSubtag}>VIRTUAL EXECUTIVE ASSISTANT</p>
+          <Image
+            src="/images/logga-cirkel.png"
+            alt="GIM-VEA Logo"
+            width={260}
+            height={260}
+            className={`${styles.heroLogo} animate-fade-in delay-300`}
+          />
         </div>
       </section>
 

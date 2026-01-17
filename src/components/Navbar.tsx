@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -14,7 +15,14 @@ const Navbar = () => {
         <nav className={`${styles.navbar} ${styles.glass}`}>
             <div className={`container ${styles.container}`}>
                 <Link href="/" className={styles.logo} onClick={closeMenu}>
-                    Gim<span>-</span>Vea
+                    <Image
+                        src="/images/logga-cirkel.png"
+                        alt="GIM-VEA"
+                        width={80}
+                        height={80}
+                        priority
+                        className={styles.logoImage}
+                    />
                 </Link>
 
                 {/* Hamburger button */}
