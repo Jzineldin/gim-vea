@@ -170,7 +170,7 @@ select {
 body {
   background-color: var(--color-base-black);
   background-image: url('/images/hero_background.jpg');
-  background-size: 100% auto;
+  background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
