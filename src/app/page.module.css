@@ -18,9 +18,15 @@
   padding: 0 1.5rem;
 }
 
-/* Hero background now handled by global body::before */
+/* Dark overlay for hero section */
 .heroBg {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.5);
+  z-index: 0;
 }
 
 .heroOverlay {
