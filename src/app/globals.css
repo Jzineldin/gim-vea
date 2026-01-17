@@ -169,17 +169,30 @@ select {
 /* Specific overrides for specific elements if needed */
 body {
   background-color: var(--color-base-black);
-  background-image: url('/images/hero_background.jpg');
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
   color: var(--color-text-primary);
   line-height: 1.5;
   overflow-x: hidden;
   max-width: 100vw;
   position: relative;
   min-height: 100vh;
+}
+
+/* Fixed background image - consistent across all pages */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-base-black);
+  background-image: url('/images/hero_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.7) contrast(1.1);
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Dark overlay for readability */
@@ -190,20 +203,19 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 5, 5, 0.7);
+  background: rgba(5, 5, 5, 0.65);
   z-index: -1;
   pointer-events: none;
 }
 
-/* Mobile background adjustments */
+/* Mobile background adjustments - iOS compatible */
 @media (max-width: 768px) {
-  body {
-    background-position: 60% center;
-    background-size: cover;
+  body::before {
+    background-position: 70% center;
   }
 
   body::after {
-    background: rgba(5, 5, 5, 0.75);
+    background: rgba(5, 5, 5, 0.7);
   }
 }
 
