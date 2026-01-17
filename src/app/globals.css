@@ -196,7 +196,9 @@ body::after {
 /* Mobile background adjustments - iOS compatible */
 @media (max-width: 768px) {
   body {
-    background-position: 60% center;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
     background-attachment: scroll;
   }
 }
