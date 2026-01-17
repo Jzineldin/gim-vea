@@ -291,6 +291,7 @@
 
 .cardFlow .cardBg {
   background-image: url('/images/flow-arbetsrytmer.jpg');
+  background-position: 70% center;
 }
 
 .cardPartnerskap .cardBg {
