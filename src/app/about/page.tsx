@@ -115,7 +115,7 @@ export default function About() {
                     <p className={styles.text}>
                         Om du längtar efter mer ordning, lätthet och space i ditt ledarskap – då är du på rätt plats. När du inte längre behöver bära allt, öppnas utrymme för det som verkligen vill ta form genom dig.
                     </p>
-                    <Link href="/contact" className="btn btn-primary">
+                    <Link href="https://calendly.com/monika-gim-vea/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                         Boka ett samtal med mig
                     </Link>
                 </div>

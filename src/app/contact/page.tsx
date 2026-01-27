@@ -60,6 +60,27 @@ export default function Contact() {
                     </p>
                 </div>
 
+                <div className={`${styles.bookingSection} animate-fade-up delay-100`}>
+                    <div className={styles.bookingCard}>
+                        <h2 className={styles.bookingTitle}>Boka ett kostnadsfritt samtal</h2>
+                        <p className={styles.bookingText}>
+                            Välkommen att boka ett 30-minuters samtal där vi utforskar hur jag kan stötta dig i ditt ledarskap.
+                        </p>
+                        <Link
+                            href="https://calendly.com/monika-gim-vea/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary"
+                        >
+                            Boka tid nu
+                        </Link>
+                    </div>
+                </div>
+
+                <div className={styles.divider}>
+                    <span className={styles.dividerText}>eller skicka ett meddelande</span>
+                </div>
+
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={`${styles.inputGroup} animate-fade-up delay-100`}>
                         <label htmlFor="name" className={styles.label}>Namn</label>
@@ -101,13 +122,11 @@ export default function Contact() {
 
                     {status !== "idle" && (
                         <div
-                            className={styles.statusMessage}
-                            style={{
-                                color: status === "success" ? "var(--color-primary-gold)" : status === "error" ? "#ef4444" : "var(--color-text-secondary)",
-                                padding: "var(--space-4)",
-                                borderRadius: "var(--radius-sm)",
-                                background: status === "success" ? "rgba(212, 175, 55, 0.1)" : status === "error" ? "rgba(239, 68, 68, 0.1)" : "transparent",
-                            }}
+                            className={`${styles.statusMessage} ${
+                                status === "success" ? styles.statusSuccess :
+                                status === "error" ? styles.statusError :
+                                styles.statusLoading
+                            }`}
                         >
                             {status === "loading" ? "Skickar..." : statusMessage}
                         </div>
@@ -115,8 +134,7 @@ export default function Contact() {
 
                     <button
                         type="submit"
-                        className="btn btn-primary animate-fade-up delay-300"
-                        style={{ alignSelf: "flex-start", marginTop: "1rem" }}
+                        className={`btn btn-primary animate-fade-up delay-300 ${styles.submitButton}`}
                         disabled={status === "loading"}
                     >
                         {status === "loading" ? "Skickar..." : "Skicka Förfrågan"}

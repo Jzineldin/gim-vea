@@ -44,7 +44,7 @@ export default function Home() {
               Jag hjälper dig skapa klarhet, ordning och flow i din verksamhet – i grace, i rytm och med medveten riktning.
             </p>
             <div className={styles.ctaCenter}>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="https://calendly.com/monika-gim-vea/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Boka ett möte
               </Link>
             </div>

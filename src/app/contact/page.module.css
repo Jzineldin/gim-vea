@@ -109,8 +109,104 @@
     color: var(--color-primary-gold);
 }
 
+.bookingSection {
+    margin-bottom: var(--space-12);
+}
+
+.bookingCard {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-12);
+    text-align: center;
+}
+
+.bookingTitle {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--color-primary-gold);
+    margin-bottom: var(--space-4);
+}
+
+.bookingText {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: var(--space-16) 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.divider::before {
+    margin-right: var(--space-4);
+}
+
+.divider::after {
+    margin-left: var(--space-4);
+}
+
+.dividerText {
+    color: var(--color-text-tertiary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.statusMessage {
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+}
+
+.statusSuccess {
+    color: var(--color-primary-gold);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.statusError {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.statusLoading {
+    color: var(--color-text-secondary);
+    background: transparent;
+}
+
+.submitButton {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    .bookingCard {
+        padding: var(--space-8);
+    }
+
+    .bookingTitle {
+        font-size: 1.5rem;
+    }
+
+    .bookingText {
+        font-size: 1rem;
+    }
+
+    .divider {
+        margin: var(--space-12) 0;
+    }
     .main {
         padding-top: 100px;
         padding-bottom: var(--space-16);

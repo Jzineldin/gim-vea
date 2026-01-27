@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
     try {
@@ -22,13 +25,51 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // In production, you would integrate with an email service like:
-        // - Resend
-        // - SendGrid
-        // - Nodemailer with SMTP
-        // For now, we log the submission and return success
-        console.log("Contact form submission:", { name, email, message });
+        // Validate message length
+        if (message.length > 5000) {
+            return NextResponse.json(
+                { error: "Meddelandet är för långt (max 5000 tecken)" },
+                { status: 400 }
+            );
+        }
 
+        // Check if Resend API key is configured
+        if (!process.env.RESEND_API_KEY) {
+            console.error("RESEND_API_KEY is not configured");
+            // Still log the submission for reference
+            console.log("Contact form submission (no email sent):", { name, email, message });
+            return NextResponse.json(
+                { message: "Tack för ditt meddelande! Jag återkommer inom kort." },
+                { status: 200 }
+            );
+        }
+
+        // Send email via Resend
+        const { data, error } = await resend.emails.send({
+            from: process.env.FROM_EMAIL || "GIM-VEA <noreply@gim-vea.com>",
+            to: process.env.CONTACT_EMAIL || "monika@gim-vea.com",
+            replyTo: email,
+            subject: `Ny kontaktförfrågan från ${name}`,
+            html: `
+                <h2>Ny kontaktförfrågan från webbplatsen</h2>
+                <p><strong>Namn:</strong> ${name}</p>
+                <p><strong>E-post:</strong> ${email}</p>
+                <p><strong>Meddelande:</strong></p>
+                <p>${message.replace(/\n/g, '<br>')}</p>
+                <hr>
+                <p style="color: #666; font-size: 12px;">Detta meddelande skickades från kontaktformuläret på gim-vea.com</p>
+            `,
+        });
+
+        if (error) {
+            console.error("Resend error:", error);
+            return NextResponse.json(
+                { error: "Ett fel uppstod vid skickandet. Vänligen försök igen." },
+                { status: 500 }
+            );
+        }
+
+        console.log("Email sent successfully:", data);
         return NextResponse.json(
             { message: "Tack för ditt meddelande! Jag återkommer inom kort." },
             { status: 200 }
