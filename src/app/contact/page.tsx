@@ -124,8 +124,8 @@ export default function Contact() {
                 </form>
 
                 <div className={`${styles.socials} animate-fade-up delay-300`}>
-                    <Link href="https://linkedin.com/in/monika-björklund-12841041/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</Link>
-                    <Link href="https://instagram.com/gimvea/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</Link>
+                    <Link href="https://www.linkedin.com/in/monika-bj%C3%B6rklund-12841041/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>LinkedIn</Link>
+                    <Link href="https://www.instagram.com/gimvea/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</Link>
                     <a href="mailto:monika@gim-vea.com" className={styles.socialLink}>monika@gim-vea.com</a>
                 </div>
             </div>

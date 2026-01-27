@@ -11,10 +11,10 @@ const Footer = () => {
                         Grace in Motion. Stabil grund och mjuk rörelse för hållbar expansion.
                     </p>
                     <div className={styles.links}>
-                        <Link href="https://linkedin.com/in/monika-björklund-12841041/" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                        <Link href="https://www.linkedin.com/in/monika-bj%C3%B6rklund-12841041/" target="_blank" rel="noopener noreferrer" className={styles.link}>
                             LinkedIn
                         </Link>
-                        <Link href="https://instagram.com/gimvea/" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                        <Link href="https://www.instagram.com/gimvea/" target="_blank" rel="noopener noreferrer" className={styles.link}>
                             Instagram
                         </Link>
                         <Link href="/contact" className={styles.link}>
